@@ -5,11 +5,14 @@
 ## Модульность
 
 * core
+  * favourites
   * material
   * user-features
 * main
-  * favourites
+  * history-nfo
   * recommendations
-  * weakly-weather
+  * weather-view
+    * month-view
+    * week-view
 * not-found
 * shared
