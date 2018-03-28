@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
 import { MainComponent } from './main/main.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, CoreModule, MainModule, AngularFontAwesomeModule],
+  imports: [BrowserModule, BrowserAnimationsModule, CoreModule, MainModule],
   providers: [],
   bootstrap: [AppComponent]
 })
