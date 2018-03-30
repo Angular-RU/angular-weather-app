@@ -1,0 +1,53 @@
+.main__wrapper {
+  flex: 0.7;
+  position: relative;
+}
+.wide {
+  flex: 1;
+}
+.current__city {
+  font-size: 24px;
+  margin: 50px;
+  height: 90%;
+}
+.city {
+  display: flex;
+  margin-bottom: 20px;
+}
+.view {
+  height: 90%;
+}
+.city__title {
+  margin-right: 10px;
+}
+.aside__wrapper {
+  height: 100%;
+  flex: 0.3;
+}
+.wrapper {
+  display: flex;
+  position: absolute;
+  top: 70px;
+  height: calc(100vh - 110px);
+  width: 100%;
+}
+.hide__aside {
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  width: 30px;
+  height: 50px;
+  background: grey;
+}
+.city__title {
+  margin-right: 5px;
+}
+.status {
+  margin-right: 10px;
+}
+.weather {
+  margin-right: 10px;
+}
+.fav {
+  margin-right: 50px;
+}

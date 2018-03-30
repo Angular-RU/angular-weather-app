@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { CoreModule } from '../core/core.module';
+import { SharedModule } from '../shared/shared.module';
+import { WeatherViewModule } from './weather-view/weather-view.module';
 
 @NgModule({
-  imports: [CommonModule, MainRoutingModule, CoreModule],
+  imports: [CommonModule, CoreModule, SharedModule, WeatherViewModule],
   declarations: [MainComponent],
   exports: [MainComponent]
 })
