@@ -8,7 +8,11 @@ import { CitiesModel } from '../shared/models/cities.model';
 })
 export class WeatherViewComponent implements OnInit {
   @Input() city: CitiesModel;
+  view: boolean;
   constructor() {}
 
   ngOnInit() {}
+  public toggle() {
+    this.view = !this.view;
+  }
 }

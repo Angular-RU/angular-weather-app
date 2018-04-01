@@ -6,7 +6,6 @@ import { CitiesModel } from '../../main/shared/models/cities.model';
 })
 export class FavouritesCitiesPipe implements PipeTransform {
   transform(cities: CitiesModel[], args?: any): CitiesModel[] {
-    debugger;
     return cities.filter(i => i.fav);
   }
 }

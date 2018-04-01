@@ -28,4 +28,8 @@ export class FavouritesComponent implements OnInit {
   public get favouritesCities(): CitiesModel[] {
     return this.allCities.filter(i => i.fav);
   }
+
+  public test(string) {
+    return '1';
+  }
 }

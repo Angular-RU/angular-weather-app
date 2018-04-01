@@ -1,2 +1,10 @@
-<app-week-view [city]="city"></app-week-view>
+<mat-slide-toggle class="example-margin"
+  (change)="toggle()">
+  Slide me!
+</mat-slide-toggle>
+
+<app-week-view *ngIf="!view"
+  [city]="city"></app-week-view>
 <!-- TODO: router outlet  <app-detail-view>-->
+
+<app-detail-view *ngIf="view"></app-detail-view>
