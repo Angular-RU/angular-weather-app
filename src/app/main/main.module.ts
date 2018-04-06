@@ -8,12 +8,13 @@ import { WeatherViewModule } from './weather-view/weather-view.module';
 import { RouterModule } from '@angular/router';
 import { CurrentCityStoreService } from '../core/store/current-city-store.service';
 import { CitiesStoreService } from '../core/store/cities-store.service';
+import { HttpService } from '../core/services/http.service';
 
 @NgModule({
   imports: [CommonModule, CoreModule, SharedModule, WeatherViewModule, RouterModule],
 
   declarations: [MainComponent],
   exports: [MainComponent],
-  providers: [CitiesStoreService, CurrentCityStoreService]
+  providers: [CitiesStoreService, CurrentCityStoreService, HttpService]
 })
 export class MainModule {}

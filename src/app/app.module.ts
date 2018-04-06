@@ -12,10 +12,18 @@ import { WeatherViewComponent } from './main/weather-view/weather-view.component
 import { WeekViewComponent } from './main/weather-view/week-view/week-view.component';
 import { DetailViewComponent } from './main/weather-view/detail-view/detail-view.component';
 import { appRoutes } from './core/routes/app-routes';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule, CoreModule, MainModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    CoreModule,
+    MainModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

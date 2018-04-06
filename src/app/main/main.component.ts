@@ -5,6 +5,7 @@ import { CitiesStoreService } from '../core/store/cities-store.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import { CurrentCityStoreService } from '../core/store/current-city-store.service';
+import { HttpService } from '../core/services/http.service';
 
 @Component({
   selector: 'app-main',
@@ -17,11 +18,16 @@ export class MainComponent implements OnInit {
   selectedCity: FormControl = new FormControl();
   constructor(
     private citiesStoreService: CitiesStoreService,
-    private currentCityStoreService: CurrentCityStoreService
+    private currentCityStoreService: CurrentCityStoreService,
+    private httpService: HttpService
   ) {}
 
   ngOnInit() {
     this.allCities$ = this.citiesStoreService.getCities();
+
+    this.httpService.getWeather().subscribe(res => {
+      console.log(res.body);
+    });
   }
   public addToFavourite(city: CitiesModel): void {
     city.fav = !city.fav;
