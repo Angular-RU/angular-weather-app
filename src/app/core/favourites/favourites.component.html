@@ -1,0 +1,18 @@
+<div class="input__wrapper">
+  <mat-form-field floatLabel="never">
+    <mat-select placeholder="Выберите город"
+      [formControl]="selectedCity">
+      <mat-option *ngFor="let city of allCities"
+        [value]="city">
+        {{ city.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-list role="list">
+    <h3 mat-subheader>Избранные города</h3>
+    <mat-list-item (click)="chooseCity(city)"
+      *ngFor="let city of favouritesCities"
+      role="listitem"
+      class="list__item">{{city.title}}</mat-list-item>
+  </mat-list>
+</div>
