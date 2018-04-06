@@ -1,6 +1,6 @@
 <mat-card class="item"
   routerLink='detail/{{currentCity}}/{{weather.date}}/'>
-  <mat-card-header class="date"> {{weather.date | convertDate:"DD MMM YYYY"}}</mat-card-header>
+  <mat-card-header class="date"> {{weather.latt_long | convertDate:"DD MMM YYYY"}}</mat-card-header>
   <div class="grid">
     <div class="grid__title">Температура</div>
     <div class="grid__item">{{weather.temp}}</div>

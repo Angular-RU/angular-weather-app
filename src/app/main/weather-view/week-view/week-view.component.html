@@ -1,5 +1,5 @@
 <div class="items__wrapper">
-  <div *ngIf="currentCity$ | async as  currentCity">
+  <div *ngIf="currentCity">
     <app-week-view-card [weather]="item"
       [currentCity]="currentCity.title"
       *ngFor="let item of currentCity.weather"></app-week-view-card>

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CitiesModel } from '../../shared/models/cities.model';
 import { Observable } from 'rxjs/Observable';
 import { CurrentCityStoreService } from '../../../core/store/current-city-store.service';
+import { HttpService } from '../../../core/services/http.service';
 
 @Component({
   selector: 'app-week-view',
@@ -10,10 +11,12 @@ import { CurrentCityStoreService } from '../../../core/store/current-city-store.
 })
 export class WeekViewComponent implements OnInit {
   @Input() city: CitiesModel;
-  currentCity$: Observable<CitiesModel>;
-  constructor(private currentCityStoreService: CurrentCityStoreService) {}
+  currentCity: any;
+  constructor(private currentCityStoreService: CurrentCityStoreService, private httpService: HttpService) {}
 
   ngOnInit() {
-    this.currentCity$ = this.currentCityStoreService.getCity();
+    this.httpService.getWeather(44418).subscribe(res => {
+      this.currentCity = res;
+    });
   }
 }
