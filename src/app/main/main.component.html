@@ -18,7 +18,7 @@
 
       </div>
       <div class="view">
-        <app-weather-view [city]="currentCity"></app-weather-view>
+        <router-outlet></router-outlet>
       </div>
     </div>
     <div *ngIf="!currentCity"

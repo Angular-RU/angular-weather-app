@@ -7,7 +7,7 @@ import { CitiesModel } from '../../shared/models/cities.model';
   styleUrls: ['./week-view.component.scss']
 })
 export class WeekViewComponent implements OnInit {
-  @Input() city: CitiesModel;
+  //@Input() city: CitiesModel;
   constructor() {}
 
   ngOnInit() {}
