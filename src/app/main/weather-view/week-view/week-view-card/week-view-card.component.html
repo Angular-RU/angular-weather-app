@@ -1,14 +1,14 @@
 <mat-card class="item"
-  (click)="detailView(city)">
-  <mat-card-header class="date"> {{city.date | convertDate:"DD MMM YYYY"}}</mat-card-header>
+  routerLink='detail/{{currentCity}}/{{weather.date}}/'>
+  <mat-card-header class="date"> {{weather.date | convertDate:"DD MMM YYYY"}}</mat-card-header>
   <div class="grid">
     <div class="grid__title">Температура</div>
-    <div class="grid__item">{{city.temp}}</div>
+    <div class="grid__item">{{weather.temp}}</div>
     <div class="grid__title">Состояние</div>
     <div class="grid__item">
       <i class="fa"
         aria-hidden="true"
-        [ngClass]="chooseClass(city.status)"></i>
+        [ngClass]="chooseClass(weather.status)"></i>
     </div>
 
   </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CitiesModel } from '../../../shared/models/cities.model';
+import { CitiesModel, WeatherModel } from '../../../shared/models/cities.model';
 
 @Component({
   selector: 'app-week-view-card',
@@ -8,7 +8,8 @@ import { CitiesModel } from '../../../shared/models/cities.model';
 })
 export class WeekViewCardComponent implements OnInit {
   constructor() {}
-  @Input() city: CitiesModel;
+  @Input() weather: WeatherModel;
+  @Input() currentCity: string;
   ngOnInit() {}
 
   public chooseClass(status: string): string {
@@ -18,8 +19,5 @@ export class WeekViewCardComponent implements OnInit {
       case 'cloudy':
         return 'fa-cloud';
     }
-  }
-  public detailView(item: CitiesModel): void {
-    console.log('Redirect to detail view', item);
   }
 }

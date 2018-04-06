@@ -1,12 +1,10 @@
 <div class="wrapper">
 
-  <div class="main__wrapper"
-    [class.wide]="toogle">
+  <div class="main__wrapper">
     <div class="current__city"
       *ngIf="currentCity">
       <div class="city">
         <div class="city__title"> Выбранный город: {{currentCity.title}}</div>
-        <div class="weather">{{currentCity.temp}}</div>
 
         <div class="fav">
           <app-favourite-start (click)="addToFavourite(currentCity)"
@@ -18,14 +16,17 @@
 
       </div>
       <div class="view">
-        <app-weather-view [city]="currentCity"></app-weather-view>
+        <router-outlet>
+        </router-outlet>
+
       </div>
     </div>
     <div *ngIf="!currentCity"
       class="current__city">Выберите город</div>
 
   </div>
-  <div class="aside__wrapper">
+  <div class="aside__wrapper"
+    *ngIf="allCities$ | async as allCities">
     <app-favourites [allCities]="allCities"
       (choose)="chooseCity($event)"
       [selectedCity]="selectedCity"></app-favourites>

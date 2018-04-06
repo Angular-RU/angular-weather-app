@@ -1,4 +1,10 @@
 <mat-card class="item">
-  <mat-card-header class="date"> detail</mat-card-header>
-
+  <mat-card-header class="date"> {{weather.date}}</mat-card-header>
+  <mat-card-header class="date"> {{weather.temp}}</mat-card-header>
+  <i class="fa"
+    aria-hidden="true"
+    [ngClass]="chooseClass(weather.status)"></i>
+  <div class="reset"><button mat-raised-button
+      routerLink="/weather"
+      color="primary">Назад</button></div>
 </mat-card>

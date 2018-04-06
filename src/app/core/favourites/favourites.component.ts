@@ -25,7 +25,7 @@ export class FavouritesComponent implements OnInit {
   }
 
   /**Отфильтровать все => избранные */
-  public favouritesCities(): CitiesModel[] {
+  public get favouritesCities(): CitiesModel[] {
     return this.allCities.filter(i => i.fav);
   }
 }

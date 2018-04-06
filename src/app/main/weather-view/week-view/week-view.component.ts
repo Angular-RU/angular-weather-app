@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CitiesModel } from '../../shared/models/cities.model';
+import { Observable } from 'rxjs/Observable';
+import { CurrentCityStoreService } from '../../../core/store/current-city-store.service';
 
 @Component({
   selector: 'app-week-view',
@@ -8,7 +10,10 @@ import { CitiesModel } from '../../shared/models/cities.model';
 })
 export class WeekViewComponent implements OnInit {
   @Input() city: CitiesModel;
-  constructor() {}
+  currentCity$: Observable<CitiesModel>;
+  constructor(private currentCityStoreService: CurrentCityStoreService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentCity$ = this.currentCityStoreService.getCity();
+  }
 }
