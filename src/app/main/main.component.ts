@@ -24,18 +24,10 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.allCities$ = this.citiesStoreService.getCities();
-    //this.citiesStoreService.getCities().subscribe(res => console.log(res));
+  }
 
-    // this.httpService.testNest().subscribe(res => {
-    //   console.log(res);
-    // });
-  }
-  public addToFavourite(city: CitiesModel): void {
-    city.fav = !city.fav;
-  }
   public chooseCity(city: CitiesModel) {
     this.currentCity = city;
-    //this.currentCityStoreService.setCity(city);
   }
   public reset(): void {
     this.currentCity = null;

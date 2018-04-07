@@ -1,15 +1,26 @@
 <mat-card class="item"
-  routerLink='detail/{{currentCity}}/{{weather.date}}/'>
-  <mat-card-header class="date"> {{weather.latt_long | convertDate:"DD MMM YYYY"}}</mat-card-header>
-  <div class="grid">
-    <div class="grid__title">Температура</div>
-    <div class="grid__item">{{weather.temp}}</div>
-    <div class="grid__title">Состояние</div>
-    <div class="grid__item">
-      <i class="fa"
-        aria-hidden="true"
-        [ngClass]="chooseClass(weather.status)"></i>
+  routerLink='detail/{{weather.applicable_date}}/'>
+  <mat-card-header class="date"> {{weather.applicable_date | convertDate:"DD MMM YYYY"}}</mat-card-header>
+  <div class="row">
+    <div class="col">
+      <div class="grid__title">Макс. Темп.</div>
+      <div class="grid__item">{{weather.max_temp | number:'.0-0'}}</div>
     </div>
+
+    <div class="col">
+      <div class="grid__title">Мин. Темп.</div>
+      <div class="grid__item">{{weather.min_temp | number:'.0-0'}}</div>
+    </div>
+
+    <div class="col">
+      <div class="grid__title">Состояние</div>
+      <div class="grid__item">
+        <img class="status"
+          src="https://www.metaweather.com/static/img/weather/{{weather.weather_state_abbr}}.svg"
+          alt="">
+      </div>
+    </div>
+
 
   </div>
 </mat-card>

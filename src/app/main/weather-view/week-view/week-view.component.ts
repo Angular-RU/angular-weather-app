@@ -10,13 +10,10 @@ import { HttpService } from '../../../core/services/http.service';
   styleUrls: ['./week-view.component.scss']
 })
 export class WeekViewComponent implements OnInit {
-  @Input() city: CitiesModel;
-  currentCity: any;
+  currentCity$: Observable<CitiesModel>;
   constructor(private currentCityStoreService: CurrentCityStoreService, private httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService.getWeather(44418).subscribe(res => {
-      this.currentCity = res;
-    });
+    this.currentCity$ = this.currentCityStoreService.getCity();
   }
 }

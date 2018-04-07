@@ -11,13 +11,4 @@ export class WeekViewCardComponent implements OnInit {
   @Input() weather: WeatherModel;
   @Input() currentCity: string;
   ngOnInit() {}
-
-  public chooseClass(status: string): string {
-    switch (status) {
-      case 'sun':
-        return 'fa-sun-o';
-      case 'cloudy':
-        return 'fa-cloud';
-    }
-  }
 }

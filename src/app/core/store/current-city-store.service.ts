@@ -9,11 +9,13 @@ import { HttpService } from '../services/http.service';
 export class CurrentCityStoreService {
   private subject = new BehaviorSubject<CitiesModel>(null);
   constructor(private httpService: HttpService) {}
-  // public setCity(city: CitiesModel) {
-  //   this.httpService.getWeather(44418).subscribe.switchMap(res => {
-  //     this.subject.next(res);
-  //   });
-  // }
+
+  public setCity(city: CitiesModel) {
+    this.subject.next(null);
+    this.httpService.getWeather(city.id).subscribe(res => {
+      this.subject.next(res);
+    });
+  }
 
   public getCity(): Observable<CitiesModel> {
     return this.subject;

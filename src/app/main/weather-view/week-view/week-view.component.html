@@ -1,7 +1,11 @@
-<div class="items__wrapper">
-  <div *ngIf="currentCity">
-    <app-week-view-card [weather]="item"
-      [currentCity]="currentCity.title"
-      *ngFor="let item of currentCity.weather"></app-week-view-card>
-  </div>
+<div class="items__wrapper"
+  *ngIf="currentCity$ | async as currentCity">
+
+  <app-week-view-card [weather]="item"
+    [currentCity]="currentCity.title"
+    *ngFor="let item of currentCity.consolidated_weather"></app-week-view-card>
+</div>
+<div class="loader__wrapper"
+  *ngIf="!(currentCity$ | async)">
+  <app-loader></app-loader>
 </div>

@@ -6,8 +6,14 @@
   box-sizing: border-box;
   cursor: pointer;
 }
-.grid {
+.row {
   font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-around;
+}
+.col {
   display: flex;
 }
 .grid__title {
@@ -18,4 +24,7 @@
 }
 .date {
   margin-right: 20px;
+}
+.status {
+  width: 30px;
 }

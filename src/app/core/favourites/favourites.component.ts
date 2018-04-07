@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { CitiesModel } from '../../main/shared/models/cities.model';
+import { CurrentCityStoreService } from '../store/current-city-store.service';
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
@@ -12,7 +13,7 @@ export class FavouritesComponent implements OnInit {
   @Input() selectedCity: FormControl;
   @Input() allCities: CitiesModel[];
   @Output() choose: EventEmitter<any> = new EventEmitter();
-  constructor() {}
+  constructor(private currentCityStoreService: CurrentCityStoreService) {}
 
   ngOnInit() {
     /** Подписка на выбранный город */
@@ -20,12 +21,8 @@ export class FavouritesComponent implements OnInit {
   }
 
   /** Выбрать город */
-  public chooseCity(city: string): void {
+  public chooseCity(city: CitiesModel): void {
     this.choose.emit(city);
-  }
-
-  /**Отфильтровать все => избранные */
-  public get favouritesCities(): CitiesModel[] {
-    return this.allCities.filter(i => i.fav);
+    this.currentCityStoreService.setCity(city);
   }
 }

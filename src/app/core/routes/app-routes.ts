@@ -6,7 +6,7 @@ import { MainComponent } from '../../main/main.component';
 
 const ViewRoutes: Routes = [
   { path: '', component: WeekViewComponent },
-  { path: 'detail/:city/:date', component: DetailViewComponent }
+  { path: 'detail/:date', component: DetailViewComponent }
 ];
 const weatherRouters: Routes = [
   {
