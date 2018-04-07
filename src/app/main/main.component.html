@@ -5,11 +5,11 @@
       *ngIf="currentCity">
       <div class="city">
         <div class="city__title"> Выбранный город: {{currentCity.title}}</div>
-
+        <!-- 
         <div class="fav">
           <app-favourite-start (click)="addToFavourite(currentCity)"
             [city]="currentCity"></app-favourite-start>
-        </div>
+        </div> -->
         <div class="reset"><button mat-raised-button
             (click)="reset()"
             color="primary">Сбросить</button></div>

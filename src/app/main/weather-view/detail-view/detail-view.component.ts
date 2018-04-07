@@ -17,10 +17,22 @@ export class DetailViewComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private currentCityStoreService: CurrentCityStoreService) {}
 
   ngOnInit() {
+    this.findInfo();
+  }
+
+  private findInfo(): void {
+    this.getCurrentCity();
+    this.getActiveDate();
+    this.currentDay = this.currentCity.consolidated_weather.find(i => i.applicable_date === this.date);
+  }
+
+  private getCurrentCity(): void {
     this.currentCityStoreService.getCity().subscribe(res => (this.currentCity = res));
+  }
+
+  private getActiveDate(): void {
     this.activatedRoute.params.subscribe(params => {
       this.date = params.date;
     });
-    this.currentDay = this.currentCity.consolidated_weather.find(i => i.applicable_date === this.date);
   }
 }

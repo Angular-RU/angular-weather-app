@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
     this.allCities$ = this.citiesStoreService.getCities();
   }
 
-  public chooseCity(city: CitiesModel) {
+  public chooseCity(city: CitiesModel): void {
     this.currentCity = city;
     this.currentCityStoreService.setCity(city);
   }
