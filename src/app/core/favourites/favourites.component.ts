@@ -23,6 +23,5 @@ export class FavouritesComponent implements OnInit {
   /** Выбрать город */
   public chooseCity(city: CitiesModel): void {
     this.choose.emit(city);
-    this.currentCityStoreService.setCity(city);
   }
 }

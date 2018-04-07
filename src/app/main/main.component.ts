@@ -28,9 +28,10 @@ export class MainComponent implements OnInit {
 
   public chooseCity(city: CitiesModel) {
     this.currentCity = city;
+    this.currentCityStoreService.setCity(city);
   }
   public reset(): void {
-    this.currentCity = null;
     this.selectedCity.reset();
+    this.currentCityStoreService.reset();
   }
 }

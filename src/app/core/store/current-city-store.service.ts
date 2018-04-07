@@ -11,12 +11,14 @@ export class CurrentCityStoreService {
   constructor(private httpService: HttpService) {}
 
   public setCity(city: CitiesModel) {
-    this.subject.next(null);
+    this.reset();
     this.httpService.getWeather(city.id).subscribe(res => {
       this.subject.next(res);
     });
   }
-
+  public reset(): void {
+    this.subject.next(null);
+  }
   public getCity(): Observable<CitiesModel> {
     return this.subject;
   }
