@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WeatherModel, CitiesModel } from '../../shared/models/cities.model';
-import { Observable } from 'rxjs/Observable';
 import { CurrentCityStoreService } from '../../../core/store/current-city-store.service';
+import { CitiesModel, WeatherModel } from '../../shared/models/cities.model';
 
 @Component({
   selector: 'app-detail-view',

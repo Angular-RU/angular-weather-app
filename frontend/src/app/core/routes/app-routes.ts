@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { WeekViewComponent } from '../../main/weather-view/week-view/week-view.component';
+import { MainComponent } from '../../main/main.component';
 import { DetailViewComponent } from '../../main/weather-view/detail-view/detail-view.component';
 import { WeatherViewComponent } from '../../main/weather-view/weather-view.component';
-import { MainComponent } from '../../main/main.component';
+import { WeekViewComponent } from '../../main/weather-view/week-view/week-view.component';
 import { LoginComponent } from '../user-features/login/login.component';
 import { AuthGuard } from './auth.guard';
 

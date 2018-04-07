@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CitiesModel, WeatherModel } from '../../../shared/models/cities.model';
+import { Component, Input } from '@angular/core';
+import { WeatherModel } from '../../../shared/models/cities.model';
 
 @Component({
   selector: 'app-week-view-card',

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CitiesModel } from '../shared/models/cities.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-weather-view',
