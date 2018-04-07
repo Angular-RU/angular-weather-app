@@ -16,4 +16,9 @@ export class HttpService {
     const url = 'http://localhost:4200/backend';
     return this.http.get(url);
   }
+
+  public postNest(data): Observable<any> {
+    const url = 'http://localhost:4200/backend';
+    return this.http.post(url, data);
+  }
 }
