@@ -8,6 +8,8 @@
 
 # dependencies
 /node_modules
+/frontend/node_modules
+/backend/node_modules
 
 # IDEs and editors
 /.idea
@@ -42,3 +44,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.vscode/settings.json
