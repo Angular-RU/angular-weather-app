@@ -6,13 +6,4 @@ import { CitiesModel } from '../shared/models/cities.model';
   templateUrl: './weather-view.component.html',
   styleUrls: ['./weather-view.component.scss']
 })
-export class WeatherViewComponent implements OnInit {
-  @Input() city: CitiesModel;
-  view: boolean;
-  constructor() {}
-
-  ngOnInit() {}
-  public toggle() {
-    this.view = !this.view;
-  }
-}
+export class WeatherViewComponent {}

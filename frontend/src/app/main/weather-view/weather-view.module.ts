@@ -6,10 +6,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { WeekViewCardComponent } from './week-view/week-view-card/week-view-card.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import { RouterModule } from '@angular/router';
+import { DetailViewModule } from './detail-view/detail-view.module';
+import { WeekViewModule } from './week-view/week-view.module';
 
 @NgModule({
-  imports: [RouterModule, CommonModule, SharedModule],
-  exports: [WeatherViewComponent],
-  declarations: [WeatherViewComponent, WeekViewComponent, WeekViewCardComponent, DetailViewComponent]
+  imports: [RouterModule, CommonModule, SharedModule, DetailViewModule, WeekViewModule],
+  exports: [DetailViewModule, WeekViewModule],
+  declarations: [WeatherViewComponent]
 })
 export class WeatherViewModule {}

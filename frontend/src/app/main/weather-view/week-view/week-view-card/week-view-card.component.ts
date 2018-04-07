@@ -6,9 +6,7 @@ import { CitiesModel, WeatherModel } from '../../../shared/models/cities.model';
   templateUrl: './week-view-card.component.html',
   styleUrls: ['./week-view-card.component.scss']
 })
-export class WeekViewCardComponent implements OnInit {
-  constructor() {}
+export class WeekViewCardComponent {
   @Input() weather: WeatherModel;
   @Input() currentCity: string;
-  ngOnInit() {}
 }

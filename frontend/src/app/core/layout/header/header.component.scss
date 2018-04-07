@@ -20,3 +20,22 @@
   margin-right: 15px;
   letter-spacing: 0.4px;
 }
+.login_feature {
+  position: absolute;
+  right: 40px;
+}
+.user,
+.not-log {
+  display: flex;
+}
+.login {
+  margin-right: 15px;
+  cursor: pointer;
+}
+.logout {
+  cursor: pointer;
+}
+.registration {
+  color: #a7a7a7;
+  margin-right: 15px;
+}

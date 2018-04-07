@@ -1,0 +1,27 @@
+<div class="login__wrapper">
+  <mat-card class="login_card">
+    <div class="user">
+      <mat-form-field class="example-full-width">
+        <input matInput
+          [formControl]="login"
+          placeholder="Введите логин"
+          value="">
+      </mat-form-field>
+    </div>
+    <div class="password">
+      <mat-form-field class="example-full-width">
+        <input matInput
+          [formControl]="password"
+          placeholder="Введите пароль"
+          value="">
+      </mat-form-field>
+    </div>
+    <div class="accept">
+      <button mat-raised-button
+        (click)="auth()"
+        color="primary">Войти</button>
+    </div>
+    <div class="notification"
+      *ngIf="notification">{{notification}}</div>
+  </mat-card>
+</div>

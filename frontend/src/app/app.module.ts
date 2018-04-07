@@ -13,6 +13,7 @@ import { WeekViewComponent } from './main/weather-view/week-view/week-view.compo
 import { DetailViewComponent } from './main/weather-view/detail-view/detail-view.component';
 import { appRoutes } from './core/routes/app-routes';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './core/routes/auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

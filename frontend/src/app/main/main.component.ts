@@ -24,9 +24,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.allCities$ = this.citiesStoreService.getCities();
-    //this.httpService.testNest().subscribe(res => console.log(res));
-    this.httpService.postNest({ login: 'admin', password: 'root' }).subscribe(res => console.log(res));
-    this.httpService.postNest({ login: 'admin', password: 'user' }).subscribe(res => console.log(res));
   }
 
   public chooseCity(city: CitiesModel): void {
