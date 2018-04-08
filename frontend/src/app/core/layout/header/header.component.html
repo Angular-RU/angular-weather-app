@@ -1,0 +1,19 @@
+<div class="header__wrapper">
+  <div class="header__title"> Приложение Angular - Weather</div>
+
+  <div class="header__icon"><i class="fa fa-cloud"></i></div>
+  <div class="login_feature">
+    <div class="user"
+      *ngIf="user$ | async as user">
+      <div class="login">{{user}}</div>
+      <div class="logout"
+        (click)="logout()">выйти</div>
+    </div>
+    <div class="not-log"
+      *ngIf="!(user$ | async)">
+      <div class="registration">регистрация</div>
+      <div class="login"
+        (click)="login()">войти</div>
+    </div>
+  </div>
+</div>

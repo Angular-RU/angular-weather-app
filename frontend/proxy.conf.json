@@ -1,0 +1,17 @@
+{
+  "/api": {
+    "target": "https://www.metaweather.com/api",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  },
+  "/backend": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "pathRewrite": {
+      "^/backend": ""
+    }
+  }
+}

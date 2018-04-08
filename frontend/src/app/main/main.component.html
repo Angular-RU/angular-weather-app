@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+  <div class="main__wrapper">
+    <div class="current__city"
+      *ngIf="currentCity">
+      <div class="city">
+        <div class="city__title"> Выбранный город: {{currentCity.title}}</div>
+        <div class="reset"><button mat-raised-button
+            (click)="reset()"
+            color="primary">Сбросить</button></div>
+
+      </div>
+      <div class="view">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div *ngIf="!currentCity"
+      class="current__city">Выберите город</div>
+
+  </div>
+  <div class="aside__wrapper"
+    *ngIf="allCities$ | async as allCities">
+    <app-favourites [allCities]="allCities"
+      (choose)="chooseCity($event)"
+      [selectedCity]="selectedCity"></app-favourites>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<mat-card class="item">
+  <mat-card-header class="date"> {{currentDay.applicable_date}}</mat-card-header>
+  <mat-card-header class="date"> {{currentDay.weather_state_name}}</mat-card-header>
+  <mat-card-header class="date"> {{currentDay.the_temp}}</mat-card-header>
+
+  <img class="status"
+    src="https://www.metaweather.com/static/img/weather/{{currentDay.weather_state_abbr}}.svg"
+    alt="">
+  <div class="reset"><button mat-raised-button
+      routerLink="/weather"
+      color="primary">Назад</button></div>
+</mat-card>

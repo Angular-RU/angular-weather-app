@@ -1,0 +1,23 @@
+.login__wrapper {
+  display: flex;
+  position: absolute;
+  top: 70px;
+  height: calc(100vh - 110px);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.login_card {
+  height: 300px;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.notification {
+  margin-top: 10px;
+  color: red;
+}
+.password {
+  margin-bottom: 20px;
+}
