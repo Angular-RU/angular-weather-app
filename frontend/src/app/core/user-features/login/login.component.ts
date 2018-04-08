@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.notification = null;
   }
   public auth(): void {
-    this.httpService.postNest({ login: this.login.value, password: this.password.value }).subscribe(
+    this.httpService.login({ login: this.login.value, password: this.password.value }).subscribe(
       res => {
         this.currentUserStoreService.setUser(res.login);
         this.router.navigate(['/weather']);

@@ -13,12 +13,13 @@
 .city {
   display: flex;
   margin-bottom: 20px;
+  align-items: center;
 }
 .view {
   height: 90%;
 }
 .city__title {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .aside__wrapper {
   height: 100%;
@@ -38,9 +39,6 @@
   width: 30px;
   height: 50px;
   background: grey;
-}
-.city__title {
-  margin-right: 5px;
 }
 .status {
   margin-right: 10px;

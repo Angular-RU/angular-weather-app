@@ -13,12 +13,12 @@ export class HttpService {
   }
 
   public testNest(): Observable<any> {
-    const url = 'http://localhost:4200/backend';
+    const url = 'http://localhost:4200/backend/login';
     return this.http.get(url);
   }
 
-  public postNest(data): Observable<any> {
-    const url = 'http://localhost:4200/backend';
+  public login(data): Observable<any> {
+    const url = 'http://localhost:4200/backend/login';
     return this.http.post(url, data);
   }
 }
