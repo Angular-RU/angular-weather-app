@@ -1,9 +1,9 @@
-## О проекте
+# О проекте
 
 Проект в рамках курса Codedojo - Angular in Action
 Angular + NestJS
 
-# Логин для доступа
+## Логин для доступа
 
 login: angular_ru , password: 'angular_ru'
 
