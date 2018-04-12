@@ -18,18 +18,13 @@ export class HttpService {
     return this.http.get(url);
   }
 
-  public testNest(): Observable<any> {
-    const url = 'http://localhost:4200/backend/login';
-    return this.http.get(url);
-  }
-
   public login(data: UserBaseModel): Observable<any> {
     const url = 'http://localhost:4200/backend/login';
     return this.http.post(url, data);
   }
 
   public registration(data: UserBaseModel): Observable<any> {
-    const url = 'http://localhost:4200/backend/registration';
+    const url = Urls.registration();
     return this.http.post(url, data);
   }
 }
