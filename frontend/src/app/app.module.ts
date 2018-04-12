@@ -14,6 +14,7 @@ import { DetailViewComponent } from './main/weather-view/detail-view/detail-view
 import { appRoutes } from './core/routes/app-routes';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './core/routes/auth.guard';
+import { NotFoundModule } from './not-found/not-found.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { AuthGuard } from './core/routes/auth.guard';
     BrowserAnimationsModule,
     CoreModule,
     MainModule,
-    HttpClientModule
+    HttpClientModule,
+    NotFoundModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

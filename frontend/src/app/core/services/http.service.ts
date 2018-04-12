@@ -13,6 +13,11 @@ export class HttpService {
     return this.http.get(url);
   }
 
+  public getAllCities(query: string): Observable<any> {
+    const url = Urls.getAllCities(query);
+    return this.http.get(url);
+  }
+
   public testNest(): Observable<any> {
     const url = 'http://localhost:4200/backend/login';
     return this.http.get(url);

@@ -9,4 +9,9 @@ export class Urls {
     const result = `/api/location/${id}/`;
     return result;
   }
+
+  public static getAllCities(query: string): string {
+    const result = `/api/location/search/?query=${query}`;
+    return result;
+  }
 }

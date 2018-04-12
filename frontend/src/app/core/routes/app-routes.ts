@@ -6,6 +6,7 @@ import { WeekViewComponent } from '../../main/weather-view/week-view/week-view.c
 import { LoginComponent } from '../user-features/login/login.component';
 import { AuthGuard } from './auth.guard';
 import { RegistrationComponent } from '../user-features/registration/registration.component';
+import { NotFoundComponent } from '../../not-found/not-found.component';
 
 const ViewRoutes: Routes = [
   { path: '', component: WeekViewComponent },
@@ -26,5 +27,6 @@ export const appRoutes: Routes = [
     path: 'registration',
     component: RegistrationComponent
   },
-  { path: 'weather', component: MainComponent, children: weatherRouters, canActivate: [AuthGuard] }
+  { path: 'weather', component: MainComponent, children: weatherRouters, canActivate: [AuthGuard] },
+  { path: '**', component: NotFoundComponent }
 ];

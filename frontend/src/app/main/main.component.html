@@ -18,10 +18,7 @@
       class="current__city">Выберите город</div>
 
   </div>
-  <div class="aside__wrapper"
-    *ngIf="allCities$ | async as allCities">
-    <app-favourites [allCities]="allCities"
-      (choose)="chooseCity($event)"
-      [selectedCity]="selectedCity"></app-favourites>
+  <div class="aside__wrapper">
+    <app-favourites (choose)="chooseCity($event)"></app-favourites>
   </div>
 </div>
