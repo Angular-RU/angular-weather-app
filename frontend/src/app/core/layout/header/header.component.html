@@ -7,13 +7,17 @@
       *ngIf="user$ | async as user">
       <div class="login">{{user}}</div>
       <div class="logout"
-        (click)="logout()">выйти</div>
+        (click)="logout()"
+        routerLink='login'>выйти</div>
     </div>
     <div class="not-log"
       *ngIf="!(user$ | async)">
-      <div class="registration">регистрация</div>
+      <div class="registration"
+        routerLink='registration'
+        routerLinkActive="active-link">регистрация</div>
       <div class="login"
-        (click)="login()">войти</div>
+        routerLink='login'
+        routerLinkActive="active-link">войти</div>
     </div>
   </div>
 </div>

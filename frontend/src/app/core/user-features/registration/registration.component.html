@@ -1,9 +1,9 @@
-<div class="login__wrapper">
-  <mat-card class="login_card">
+<div class="registration__wrapper">
+  <mat-card class="registration_card">
     <div class="user">
       <mat-form-field class="example-full-width">
         <input matInput
-          [formControl]="login"
+          [formControl]="registration_login"
           placeholder="Введите логин"
           value="">
       </mat-form-field>
@@ -11,18 +11,19 @@
     <div class="password">
       <mat-form-field class="example-full-width">
         <input matInput
-          [formControl]="password"
+          [formControl]="registration_password"
           placeholder="Введите пароль"
           value="">
       </mat-form-field>
     </div>
     <div class="accept">
       <button mat-raised-button
-        (click)="auth()"
-        [disabled]="login.invalid || password.invalid"
+        (click)="registration()"
+        [disabled]="isButtonDisabled || registration_login.invalid || registration_password.invalid"
         color="primary">Войти</button>
     </div>
     <div class="notification"
+      [class.notification_success]='registrationDone'
       *ngIf="notification">{{notification}}</div>
   </mat-card>
 </div>

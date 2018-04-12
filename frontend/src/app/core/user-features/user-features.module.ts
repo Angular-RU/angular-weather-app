@@ -6,11 +6,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from '../services/http.service';
 import { CurrentUserStoreService } from '../store/current-user.service';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
-  declarations: [LoginComponent],
-  exports: [LoginComponent],
+  declarations: [LoginComponent, RegistrationComponent],
+  exports: [LoginComponent, RegistrationComponent],
   providers: [HttpService, CurrentUserStoreService]
 })
 export class UserFeaturesModule {}

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Urls } from '../urls/urls.const';
+import { UserBaseModel } from '../shared/models/userBase.model';
 
 @Injectable()
 export class HttpService {
@@ -17,8 +18,13 @@ export class HttpService {
     return this.http.get(url);
   }
 
-  public login(data): Observable<any> {
+  public login(data: UserBaseModel): Observable<any> {
     const url = 'http://localhost:4200/backend/login';
+    return this.http.post(url, data);
+  }
+
+  public registration(data: UserBaseModel): Observable<any> {
+    const url = 'http://localhost:4200/backend/registration';
     return this.http.post(url, data);
   }
 }
