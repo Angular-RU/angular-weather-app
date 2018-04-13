@@ -16,7 +16,7 @@
     *ngIf="toggle.value">
 
 
-    <app-week-graph></app-week-graph>
+    <app-week-graph [weather]="currentCity.consolidated_weather"></app-week-graph>
   </div>
 </div>
 <div class="loader__wrapper"
