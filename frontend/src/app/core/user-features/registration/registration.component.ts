@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +14,7 @@ export class RegistrationComponent implements OnInit {
   notification: string;
   isButtonDisabled: boolean;
   registrationDone: boolean;
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private router: Router) {}
 
   ngOnInit() {
     this.isButtonDisabled = false;
@@ -28,6 +29,9 @@ export class RegistrationComponent implements OnInit {
         this.isButtonDisabled = true;
         this.registrationDone = true;
         this.notification = 'Вы успешно зарегистрированы';
+        setTimeout(() => {
+          this.router.navigate(['login']);
+        }, 1000);
       },
       err => {
         this.notification = 'Пользователь уже существует в системе';

@@ -18,5 +18,6 @@ export class HeaderComponent implements OnInit {
 
   public logout(): void {
     this.currentUserStoreService.reset();
+    localStorage.clear();
   }
 }

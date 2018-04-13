@@ -5,7 +5,7 @@
   <div class="login_feature">
     <div class="user"
       *ngIf="user$ | async as user">
-      <div class="login">{{user}}</div>
+      <div class="login">Привет, {{user}}!</div>
       <div class="logout"
         (click)="logout()"
         routerLink='login'>выйти</div>
