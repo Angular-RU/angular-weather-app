@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpService } from '../../../core/services/http.service';
 import { CurrentCityStoreService } from '../../../core/store/current-city-store.service';
 import { CitiesModel } from '../../shared/models/cities.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-week-view',
@@ -11,6 +12,7 @@ import { CitiesModel } from '../../shared/models/cities.model';
 })
 export class WeekViewComponent implements OnInit {
   currentCity$: Observable<CitiesModel>;
+  toggle = new FormControl();
   constructor(private currentCityStoreService: CurrentCityStoreService, private httpService: HttpService) {}
 
   ngOnInit() {

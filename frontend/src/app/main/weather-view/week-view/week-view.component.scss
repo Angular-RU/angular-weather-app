@@ -11,3 +11,14 @@
   align-items: center;
   justify-content: center;
 }
+.card {
+  height: 80%;
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+}
+.graph {
+  height: 80%;
+}
