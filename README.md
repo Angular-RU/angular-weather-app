@@ -9,9 +9,10 @@ login: angular_ru , password: 'angular_ru'
 
 ## TODO
 
-* [ ] Регистрация
+* [x] Регистрация
 * [ ] API geolocation
 * [x] Расширить список городов (возможно API)
 * [ ] Возможность добавлять избранное (интеграция с сервером)
 * [ ] Detail Card View
 * [x] 404
+* [ ] svg schedule
