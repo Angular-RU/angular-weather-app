@@ -29,10 +29,8 @@ export class FavouritesComponent implements OnInit {
       .subscribe(res => (this.allCities = res));
 
     this.currentUserStoreService.getuser().subscribe(res => {
-      debugger;
       this.favs = res.favourites;
     });
-    console.log(this.favs);
   }
   /** Выбрать город */
   public chooseCity(city: CitiesModel): void {
