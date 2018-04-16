@@ -13,6 +13,6 @@ login: angular_ru , password: 'angular_ru'
 * [ ] API geolocation
 * [x] Расширить список городов (возможно API)
 * [ ] Возможность добавлять избранное (интеграция с сервером)
-* [ ] Detail Card View
+* [x] Detail Card View
 * [x] 404
-* [ ] svg schedule
+* [x] svg schedule
