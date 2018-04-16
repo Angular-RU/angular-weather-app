@@ -12,5 +12,14 @@
         <span>{{ city.title }}</span>
       </mat-option>
     </mat-autocomplete>
+
   </mat-form-field>
+  <mat-list>
+    <h3 mat-subheader>избранные города</h3>
+    <mat-list-item class="fav__item"
+      *ngFor="let city of favs"
+      (click)="chooseCity(city)">
+      {{city.name}}
+    </mat-list-item>
+  </mat-list>
 </div>

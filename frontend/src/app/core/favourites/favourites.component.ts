@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
 import { map, switchMap, filter, debounceTime } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
+import { CurrentUserStoreService } from '../store/current-user.service';
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
@@ -19,12 +20,19 @@ export class FavouritesComponent implements OnInit {
   @Output() choose: EventEmitter<any> = new EventEmitter();
   subscription: Subscription;
   public allCities: any[];
-  constructor(private http: HttpService) {}
+  favs: any[];
+  constructor(private http: HttpService, private currentUserStoreService: CurrentUserStoreService) {}
 
   ngOnInit() {
     this.selectedCity.valueChanges
       .pipe(filter(i => i.length > 0), switchMap((data: string) => this.http.getAllCities(data)))
       .subscribe(res => (this.allCities = res));
+
+    this.currentUserStoreService.getuser().subscribe(res => {
+      debugger;
+      this.favs = res.favourites;
+    });
+    console.log(this.favs);
   }
   /** Выбрать город */
   public chooseCity(city: CitiesModel): void {

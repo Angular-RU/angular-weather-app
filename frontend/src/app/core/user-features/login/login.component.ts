@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   public auth(): void {
     this.httpService.login({ login: this.login.value, password: this.password.value }).subscribe(
       res => {
-        this.currentUserStoreService.setUser(res.login);
-        localStorage.setItem('login', res.login);
+        this.currentUserStoreService.setUser(res);
+        localStorage.setItem('user', res);
         this.router.navigate(['/weather']);
       },
       err => {

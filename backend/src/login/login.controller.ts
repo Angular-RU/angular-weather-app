@@ -14,8 +14,14 @@ export class LoginController {
 
   @Post()
   async login(@Body() user: UserDto) {
-    if (this.loginService.checkUser(user)) {
-      return user;
+    const result = this.loginService.checkUser(user);
+    console.log(result);
+    if (result) {
+      console.log(result.favourites);
+      return {
+        user: result.login,
+        favourites: result.favourites
+      };
     } else {
       throw new HttpException('Incorrect login or password', HttpStatus.UNAUTHORIZED);
     }

@@ -1,7 +1,6 @@
 <svg width="1000px"
   height="505px">
   <text x="930" y="240" font-family="sans-serif" font-size="25" fill="gray">Дата</text>
-  <text x="15" y="275" font-family="sans-serif" font-size="15" fill="gray">0</text>
   <line x1="0" y1="15" x2="5" y2="0" stroke="black" stroke-width="2"/>
   <line x1="5" y1="0" x2="10" y2="15" stroke="black" stroke-width="2"/>
   <line x1="5" y1="0" x2="5" y2="500" stroke="black" stroke-width="3"/>
@@ -9,13 +8,13 @@
   <!-- стрелки -->
   <line x1="985" y1="245" x2="1000" y2="250" stroke="black" stroke-width="2"/>
   <line x1="985" y1="255" x2="1000" y2="250" stroke="black" stroke-width="2"/>
-  <text x="15" y="21" font-family="sans-serif" font-size="25" fill="gray">Погода</text>
+  <text x="15" y="21" font-family="sans-serif" font-size="25" fill="gray">°C</text>
   <!-- Основной график -->
   <polyline fill="#e0e0e0" stroke="black" [attr.points]="dotsMax"  stroke-width="2"/>
   <polyline fill="#e0e0ff" stroke="blue" [attr.points]="dotsMin"  stroke-width="2"/>
   <!-- погода в цифрах -->
-  <text *ngFor="let item of weather; index as i" [attr.x]="(5+ i*1000/5 )" [attr.y]="(240 - item.max_temp * 5)" font-family="sans-serif" font-size="15" fill="gray">{{item.max_temp | number:'.0-1' }}</text>
-  <text *ngFor="let item of weather; index as i" [attr.x]="(5+ i*1000/5 )" [attr.y]="(250 - item.min_temp * 5)" font-family="sans-serif" font-size="15" fill="gray">{{item.min_temp | number:'.0-1' }}</text>
-
+  <text *ngFor="let item of weather; index as i" [attr.x]="(10+ i*1000/5 )" [attr.y]="(240 - item.max_temp * 5)" font-family="sans-serif" font-size="10" fill="gray">{{item.max_temp | number:'.0-1' }}°C</text>
+  <text *ngFor="let item of weather; index as i" [attr.x]="(10+ i*1000/5 )" [attr.y]="(270 - item.min_temp * 5)" font-family="sans-serif" font-size="10" fill="gray">{{item.min_temp | number:'.0-1' }}°C</text>
+  <text *ngFor="let item of weather; index as i" [attr.x]="(7+ i*1000/5 )" [attr.y]="270" font-family="sans-serif" font-size="10" fill="gray">{{item.applicable_date | convertDate:"DD MMM" }}</text>
 
 </svg>

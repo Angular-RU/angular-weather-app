@@ -1,7 +1,6 @@
 .items__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 100%;
 }
 .loader__wrapper {
@@ -12,7 +11,7 @@
   justify-content: center;
 }
 .card {
-  height: 80%;
+  flex: 1;
   display: flex;
 
   flex-direction: column;
@@ -21,4 +20,7 @@
 }
 .graph {
   height: 80%;
+}
+.slide {
+  margin-bottom: 10px;
 }

@@ -18,7 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -29,7 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatListModule
   ],
   declarations: []
 })

@@ -11,7 +11,5 @@ export class AppComponent implements OnInit {
 
   constructor(private currentUserService: CurrentUserStoreService) {}
 
-  ngOnInit(): void {
-    this.currentUserService.setUser(localStorage.getItem('login'));
-  }
+  ngOnInit(): void {}
 }

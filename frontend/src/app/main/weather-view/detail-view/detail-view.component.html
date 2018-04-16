@@ -1,15 +1,27 @@
 <mat-card class="item">
-  <mat-card-header class="date"> {{currentDay.applicable_date}}</mat-card-header>
-  <mat-card-header class="date"> {{currentDay.weather_state_name}}</mat-card-header>
-  <mat-card-header class="date"> {{currentDay.the_temp}}</mat-card-header>
-  <div>Влажность {{currentDay.humidity}}%</div>
-  <div> Скорость ветра {{currentDay.wind_speed * 0.44704 | number:'.0-2'}} м/с</div>
+  <mat-card-header class="date">{{currentDay.applicable_date | convertDate:"DD MMMM YYYY"}}</mat-card-header>
+  <div class="grid">
+    <div class="title">средняя температура</div>
+    <div class="data">{{currentDay.the_temp | number:'.0-2'}}°C</div>
+    <div class="title">максимальная температура</div>
+    <div class="data">{{currentDay.max_temp | number:'.0-2'}}°C</div>
+    <div class="title">минимальная температура</div>
+    <div class="data">{{currentDay.min_temp | number:'.0-2'}}°C</div>
+    <div class="title">влажность воздуха</div>
+    <div class="data">{{currentDay.humidity}}%</div>
+    <div class="title">скорость ветра</div>
+    <div class="data">{{currentDay.wind_speed * 0.44704 | number:'.0-2'}} м/с
+    </div>
 
 
-  <img class="status"
-    src="https://www.metaweather.com/static/img/weather/{{currentDay.weather_state_abbr}}.svg"
-    alt="">
-  <div class="reset"><button mat-raised-button
+    <div class="title">статус</div>
+    <div class="data">
+      <img class="status"
+        src="https://www.metaweather.com/static/img/weather/{{currentDay.weather_state_abbr}}.svg"
+        alt=""></div>
+  </div>
+
+  <div class="back"><button mat-raised-button
       routerLink="/weather"
       color="primary">Назад</button></div>
 </mat-card>

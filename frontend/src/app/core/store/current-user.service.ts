@@ -4,15 +4,15 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CurrentUserStoreService {
-  private subject = new BehaviorSubject<string>(null);
+  private subject = new BehaviorSubject<any>(null);
 
-  public getuser(): Observable<string> {
+  public getuser(): Observable<any> {
     return this.subject;
   }
   public reset(): void {
     this.subject.next(null);
   }
-  public setUser(user: string) {
+  public setUser(user: any) {
     this.reset();
     this.subject.next(user);
   }
