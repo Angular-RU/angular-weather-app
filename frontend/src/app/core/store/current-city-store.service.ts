@@ -6,10 +6,10 @@ import { HttpService } from '../services/http.service';
 
 @Injectable()
 export class CurrentCityStoreService {
-  private subject = new BehaviorSubject<any>(null);
+  private subject = new BehaviorSubject<CitiesModel>(null);
   constructor(private httpService: HttpService) {}
 
-  public setCity(city: any) {
+  public setCity(city: CitiesModel) {
     this.reset();
     this.httpService.getWeather(city.woeid).subscribe(res => {
       this.subject.next(res);

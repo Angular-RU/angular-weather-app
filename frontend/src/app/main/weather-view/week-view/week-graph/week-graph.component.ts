@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { WeatherModel } from '../../../shared/models/cities.model';
 
 @Component({
   selector: 'app-week-graph',
@@ -6,15 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./week-graph.component.scss']
 })
 export class WeekGraphComponent implements OnInit {
-  @Input() weather: any[];
+  @Input() weather: WeatherModel[];
 
   ngOnInit() {}
 
-  public get dotsMax(): any {
+  public get dotsMax(): string {
     return this.weatherToDts(this.weather, 'max_temp');
   }
 
-  public get dotsMin(): any {
+  public get dotsMin(): string {
     return this.weatherToDts(this.weather, 'min_temp');
   }
 

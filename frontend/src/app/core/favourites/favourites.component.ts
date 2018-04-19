@@ -1,12 +1,9 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
+import { filter, switchMap } from 'rxjs/operators';
 import { CitiesModel } from '../../main/shared/models/cities.model';
-import { CurrentCityStoreService } from '../store/current-city-store.service';
-import { AllCities } from '../../shared/const/mock-cities';
-import { Observable } from 'rxjs/Observable';
-import { startWith } from 'rxjs/operators/startWith';
-import { map, switchMap, filter, debounceTime } from 'rxjs/operators';
+import { FavouritesCity } from '../../main/shared/models/user.model';
 import { HttpService } from '../services/http.service';
 import { CurrentUserStoreService } from '../store/current-user.service';
 @Component({
@@ -16,11 +13,10 @@ import { CurrentUserStoreService } from '../store/current-user.service';
 })
 export class FavouritesComponent implements OnInit {
   selectedCity = new FormControl();
-  filteredCities: Observable<any[]>;
   @Output() choose: EventEmitter<any> = new EventEmitter();
   subscription: Subscription;
-  public allCities: any[];
-  favs: any[];
+  public allCities: CitiesModel[];
+  favs: FavouritesCity[];
   constructor(private http: HttpService, private currentUserStoreService: CurrentUserStoreService) {}
 
   ngOnInit() {

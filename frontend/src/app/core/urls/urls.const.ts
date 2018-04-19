@@ -1,5 +1,3 @@
-import { UserBaseModel } from '../shared/models/userBase.model';
-
 export class Urls {
   /** Тестовый url nestJs */
   public static TestNestJs(): string {

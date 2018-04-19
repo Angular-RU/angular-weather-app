@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { HttpService } from '../core/services/http.service';
 import { CitiesStoreService } from '../core/store/cities-store.service';
 import { CurrentCityStoreService } from '../core/store/current-city-store.service';
-import { CitiesModel } from './shared/models/cities.model';
 import { CurrentUserStoreService } from '../core/store/current-user.service';
+import { CitiesModel } from './shared/models/cities.model';
 
 @Component({
   selector: 'app-main',

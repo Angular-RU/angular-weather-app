@@ -1,7 +1,16 @@
 export class CitiesModel {
-  id: number;
   title: string;
-  consolidated_weather: any[];
+  time: string;
+  sun_rise: string;
+  sun_set: string;
+  consolidated_weather: WeatherModel[];
+  timezone_name: string;
+  parent: Parent;
+  sources: Sources[];
+  location_type: string;
+  woeid: number;
+  latt_long: string;
+  timezone: string;
 }
 export class WeatherModel {
   air_pressure: number;
@@ -19,4 +28,17 @@ export class WeatherModel {
   wind_direction: number;
   wind_direction_compass: string;
   wind_speed: number;
+}
+export class Sources {
+  title: string;
+  slug: string;
+  url: string;
+  crawl_rate: number;
+}
+
+export class Parent {
+  title: string;
+  location_type: string;
+  woeid: number;
+  latt_long: string;
 }
