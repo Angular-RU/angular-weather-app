@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
     this.notification = null;
   }
   public auth(): void {
-    this.httpService.login({ login: this.login.value, password: this.password.value }).subscribe(
+    this.httpService.login({ login: this.login.value, password: this.password.value, favourites: null }).subscribe(
       res => {
         this.currentUserStoreService.setUser(res);
-        localStorage.setItem('user', res);
+        localStorage.setItem('user', res.user);
         this.router.navigate(['/weather']);
       },
       err => {

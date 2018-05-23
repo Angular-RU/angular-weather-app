@@ -7,7 +7,7 @@ import { UserModel } from '../../main/shared/models/user.model';
 export class CurrentUserStoreService {
   private subject = new BehaviorSubject<UserModel>(null);
 
-  public getuser(): Observable<UserModel> {
+  public getuser(): Observable<any> {
     return this.subject;
   }
   public reset(): void {

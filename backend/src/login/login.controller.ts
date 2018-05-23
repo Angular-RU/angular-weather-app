@@ -1,7 +1,6 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Post } from '@nestjs/common';
 import { UserDto } from './dto/user.dto';
 import { LoginService } from './login.service';
-import { HttpException } from '@nestjs/common';
 
 @Controller('login')
 export class LoginController {
@@ -15,9 +14,7 @@ export class LoginController {
   @Post()
   async login(@Body() user: UserDto) {
     const result = this.loginService.checkUser(user);
-    console.log(result);
     if (result) {
-      console.log(result.favourites);
       return {
         user: result.login,
         favourites: result.favourites

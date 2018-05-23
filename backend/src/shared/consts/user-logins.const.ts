@@ -1,18 +1,18 @@
-export const userLoginConst = [
+import { UserDto } from 'login/dto/user.dto';
+
+export const userLoginConst: UserDto[] = [
   {
     login: 'admin',
     password: 'root',
     favourites: [
       {
         woeid: 2122265,
-        name: 'Moscow'
+        title: 'Moscow'
       },
       {
         woeid: 2123260,
-        name: 'St Petersburg'
+        title: 'St Petersburg'
       }
     ]
-  },
-  { login: 'codedojo', password: 'codedojo' },
-  { login: 'angular_ru', password: 'angular_ru' }
+  }
 ];

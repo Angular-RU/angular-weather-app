@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Urls } from '../urls/urls.const';
-import { CitiesModel } from '../../main/shared/models/cities.model';
 import { UserModel } from '../../main/shared/models/user.model';
+import { Urls } from '../urls/urls.const';
 
 @Injectable()
 export class HttpService {
@@ -26,6 +25,15 @@ export class HttpService {
 
   public registration(data: UserModel): Observable<any> {
     const url = Urls.registration();
+    return this.http.post(url, data);
+  }
+
+  public toggleFav(user, city): Observable<any> {
+    const url = Urls.toggleFav();
+    const data = {
+      user: user,
+      city: city
+    };
     return this.http.post(url, data);
   }
 }

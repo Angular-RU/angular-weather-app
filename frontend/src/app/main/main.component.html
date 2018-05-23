@@ -5,7 +5,7 @@
       *ngIf="currentCity">
       <div class="city">
         <div class="city__title"> Выбранный город: {{currentCity.title}}</div>
-
+        <div (click)="toggleFav(currentCity)">toggle</div>
       </div>
       <div class="view">
         <router-outlet></router-outlet>

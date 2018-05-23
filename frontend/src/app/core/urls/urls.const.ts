@@ -24,4 +24,9 @@ export class Urls {
     const result = '/backend/login';
     return result;
   }
+
+  public static toggleFav(): string {
+    const result = '/backend/toggleFav';
+    return result;
+  }
 }

@@ -5,5 +5,5 @@ export class UserModel {
 }
 export class FavouritesCity {
   woeid: number;
-  name: string;
+  title: string;
 }

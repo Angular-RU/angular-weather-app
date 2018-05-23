@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { HttpService } from '../../services/http.service';
 import { Router } from '@angular/router';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-registration',
@@ -22,7 +22,8 @@ export class RegistrationComponent implements OnInit {
   public registration(): void {
     const user = {
       login: this.registration_login.value,
-      password: this.registration_password.value
+      password: this.registration_password.value,
+      favourites: null
     };
     this.httpService.registration(user).subscribe(
       res => {

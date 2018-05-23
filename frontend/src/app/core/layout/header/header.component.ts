@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrentUserStoreService } from '../../store/current-user.service';
-import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { UserModel } from '../../../main/shared/models/user.model';
+import { CurrentUserStoreService } from '../../store/current-user.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public user$: Observable<string>;
+  public user$: Observable<UserModel>;
   constructor(private currentUserStoreService: CurrentUserStoreService, private router: Router) {}
 
   ngOnInit() {
